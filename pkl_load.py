@@ -1,7 +1,10 @@
 import joblib
 
-results = joblib.load('data/demo_Run-close.pkl')
-print(results)
+
+def load_pkl(pkl_path):
+    return joblib.load(pkl_path)
+#results = joblib.load('data/demo_Run-close.pkl')
+#print(results)
 
 """
 results = {

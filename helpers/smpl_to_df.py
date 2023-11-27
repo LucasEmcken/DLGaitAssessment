@@ -10,23 +10,29 @@ def get_smpl(dict, frames_to_drop = (0,0)):
     frames_dict = dict.copy()
     
     if frames_to_drop[0] != 0:
-        frames_dict.pop(frames_to_drop[0])
+        #drop the first frames_to_drop[0] frames
+        keys_to_drop = frames[:frames_to_drop[0]]
+        for key in keys_to_drop:
+            frames_dict.pop(key)
         
     if frames_to_drop[1] != 0:
-        frames_dict.pop(frames_to_drop[1])
+        keys_to_drop = frames[-frames_to_drop[1]:]
+        for key in keys_to_drop:
+            frames_dict.pop(key)
     
     joints_2d = []
+    frames = list(frames_dict.keys())
     for frame in frames:
-        joints_2d.append(dict.get(frame).get('smpl')[0])
+        joints_2d.append(frames_dict.get(frame).get('smpl')[0])
     
     return np.array(joints_2d)
 
 
-def smpl_to_df(path):
+def smpl_to_df(path, frames_to_drop = (0,0)):
     #load pkl file
     results = joblib.load(path)
     
-    smpl_frames = np.array([get_smpl(results)[i]['body_pose'] for i in range(len(get_smpl(results)))])
+    smpl_frames = np.array([get_smpl(results, frames_to_drop)[i]['body_pose'] for i in range(len(get_smpl(results, frames_to_drop)))])
 
     smpl_joint_frames = []
 
@@ -97,14 +103,22 @@ def smpl_to_df(path):
 
 
 if __name__ == '__main__':
-    df = smpl_to_df('../data/demo_gymnasts.pkl')
+    results = joblib.load('../data/demo_walk_8.pkl')
     
-    plot_col = 4    
+    results = get_smpl(results, (10,10))
+    print(results.shape)
     
-    plt.plot(df.iloc[:,plot_col*3])
-    plt.plot(df.iloc[:,plot_col*3+1])
-    plt.plot(df.iloc[:,plot_col*3+2])
+    df = smpl_to_df('../data/demo_walk_8.pkl', (10,10))
+    
+    # print(len(get_smpl(results)[0]['body_pose']))
+    # df = smpl_to_df('../data/demo_gymnasts.pkl')
+    
+    # plot_col = 4    
+    
+    # plt.plot(df.iloc[:,plot_col*3])
+    # plt.plot(df.iloc[:,plot_col*3+1])
+    # plt.plot(df.iloc[:,plot_col*3+2])
 
-    plt.title(f'{df.columns[plot_col*3]}')
+    # plt.title(f'{df.columns[plot_col*3]}')
 
-    plt.show()
+    # plt.show()

@@ -4,8 +4,17 @@ from scipy.spatial import transform
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def get_smpl(dict):
+def get_smpl(dict, frames_to_drop = (0,0)):
     frames = list(dict.keys())
+    
+    frames_dict = dict.copy()
+    
+    if frames_to_drop[0] != 0:
+        frames_dict.pop(frames_to_drop[0])
+        
+    if frames_to_drop[1] != 0:
+        frames_dict.pop(frames_to_drop[1])
+    
     joints_2d = []
     for frame in frames:
         joints_2d.append(dict.get(frame).get('smpl')[0])

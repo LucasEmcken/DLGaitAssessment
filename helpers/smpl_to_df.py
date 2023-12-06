@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 
 def get_smpl(dict, frames_to_drop = (0,0)):
     frames = list(dict.keys())
-    
     frames_dict = dict.copy()
     
     if frames_to_drop[0] != 0:

@@ -12,7 +12,9 @@ To get the best result, make you can:
 
 - Wear clothes that makes it easy to differentiate between body parts.
 - Ensure the subjects entire body is visible in every frame of the video.
-- The subject is walking on flat ground
+- Use a static camera, i.e make sure the camera does not move during the recording.
+- Record the subject walking from the side.
+- The subject is walking on flat ground.
 
 The output will be a folder containing a "your-video-title.pkl". This returns contains data from 4D humans on your video.
 

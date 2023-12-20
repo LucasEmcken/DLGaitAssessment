@@ -6,7 +6,7 @@ You are free to use this code by forking this repository.
 
 ## Get started
 
-To get started, make sure you have a pkl file of the video you want to assess gait. You can do that by running the script found in https://colab.research.google.com/drive/1nmbWslWQdANCqDGTZnwjDNkZogfzkEDw on your video or by following the instructions on 4D humans, found here: https://shubham-goel.github.io/4dhumans/.
+To get started, ensure you have a pkl file of the video you want to assess gait. You can do that by running the script found in https://colab.research.google.com/drive/1nmbWslWQdANCqDGTZnwjDNkZogfzkEDw on your video or by following the instructions on 4D humans, found here: https://shubham-goel.github.io/4dhumans/.
 
 To get the best result, make you can:
 
@@ -22,4 +22,4 @@ Next steps are regarding feeding your data to the model.
 
 - First insert your .pkl file to the data directory.
 - Insert the path to your .pkl file on line 4 in the 15th code cell in nn.ipynb
-- Run the every cell in nn.ipnyb
+- Run every cell in nn.ipnyb

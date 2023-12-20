@@ -23,5 +23,5 @@ The output will be a folder containing a "your-video-title.pkl". This returns co
 Next steps are regarding feeding your data to the model.
 
 - First insert your .pkl file to the data directory.
-- Insert the path to your .pkl file on line 4 in the 15th code cell in nn.ipynb
-- Run every cell in nn.ipnyb
+- Then, in demo.ipynb change the value of the file variable to the path to your .pkl file.
+- Run the demo.

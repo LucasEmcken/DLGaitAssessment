@@ -22,7 +22,7 @@ The output will be a folder containing a "your-video-title.pkl". This returns co
 
 Next steps are regarding feeding your data to the model.
 
-- First insert your .pkl file to the data directory.
+- First insert your .pkl file to the demo_data directory.
 - Then, in demo.ipynb change the value of the file variable to the path to your .pkl file.
 - Run the demo.
 
@@ -30,3 +30,11 @@ Next steps are regarding feeding your data to the model.
 
 We have provided a subset of our training data, as well as our test data for you to train your own model on.
 The NN.ipynb notebook contains the code we used to train our model, and should provide a sufficient starting point for your own experimentation
+
+## Annotating your own data
+For annotating the data, we also have an annotate_data.ipynb notebook, that contains the code used for annotation
+Here you can load your pkl file, and select how many frames to drop from the frames to drop tuple.
+ - The first element of the tuple is the amount of frames to cut before the video
+ - The second element is the amount of frames to cut at the end of the video
+ - The final DF size will then be [frames_to_cut[0], -frames_to_cut[1]]
+ - As such, a tuple of value (0,0) will cut no frames, and retain all data from the video

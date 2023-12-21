@@ -22,7 +22,8 @@ Here is a short demonstration of the project, on the demo_walk_1 video, the trac
 ### Contact points
 Estimated contact points
 ![image](https://imgur.com/tyrfPlx.jpg)
-Grount truth contact points
+
+Ground truth contact points
 ![image](https://imgur.com/1d1xQZW.jpg)
 
 ### Double support

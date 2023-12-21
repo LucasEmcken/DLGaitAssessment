@@ -29,10 +29,10 @@ Grount truth contact points
 ![image](https://imgur.com/C4MiMKQ.jpg)
 
 ### Stride length and Asymmetry
-Estimated right stride length: 185.48cm
+Estimated right stride length: 185.48cm\
 Estimated left stride length: 200.24cm
 
-True right stride length: 176cm
+True right stride length: 176cm\
 True left stride length: 175cm
 
 ## Get started

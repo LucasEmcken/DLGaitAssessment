@@ -1,8 +1,31 @@
 # DLGaitAssessment
 
 Deep learning for assessment of gait parameters such as assymmetry, double support time and stride length.
-
 You are free to use this code by forking this repository.
+
+## How it works
+
+By using [4D humans](https://shubham-goel.github.io/4dhumans/) you can extract a SMPL model over time. We use this model to estimate contact points between the feet and the ground with a 93% accuracy, and by combining it with the translation of the model in SMPL space, we can estimate double support time, stride length and asymmetry
+
+## Demonstration
+Here is a short demonstration of the project, on the demo_walk_1 video, the tracking of which is in the demo_data folder
+[![Demo_walk_1](https://img.youtube.com/vi/si4jaM0NhpA/0.jpg)](https://www.youtube.com/watch?v=si4jaM0NhpA)
+
+### Contact points
+Estimated contact points
+![image](https://imgur.com/tyrfPlx.jpg)
+Grount truth contact points
+![image](https://imgur.com/1d1xQZW.jpg)
+
+### Double support
+![image](https://imgur.com/C4MiMKQ.jpg)
+
+### Stride length and Asymmetry
+Estimated right stride length: 185.48cm
+Estimated left stride length: 200.24cm
+
+True right stride length: 176cm
+True left stride length: 175cm
 
 ## Get started
 

@@ -5,7 +5,15 @@ You are free to use this code by forking this repository.
 
 ## How it works
 
-By using [4D humans](https://shubham-goel.github.io/4dhumans/) you can extract a SMPL model over time. We use this model to estimate contact points between the feet and the ground with a 93% accuracy, and by combining it with the translation of the model in SMPL space, we can estimate double support time, stride length and asymmetry
+By using [4D humans](https://shubham-goel.github.io/4dhumans/) you can extract a SMPL model over time. We use this model to estimate contact points between the feet and the ground with a 93% accuracy, and by combining it with the translation of the model in SMPL space, we can estimate double support time, stride length and asymmetry. The model compared to a baseline, corresponding to the averages of the train set results in the following table.
+
+|   | MAE  | MAE baseline  |
+|---|---|---|
+| Double support  | 2.24%  | 3%  |
+| Stride length  | 13.3  | 21.6  |
+| Asymmetry  | 1.7%  | 0.526%  |
+
+Note that Asymmetry performs worse than baseline, this is because typically asymmetry is between 0-2%, and therefore, small differences in estimated stride length can lead to a larger asymmetry score
 
 ## Demonstration
 Here is a short demonstration of the project, on the demo_walk_1 video, the tracking of which is in the demo_data folder

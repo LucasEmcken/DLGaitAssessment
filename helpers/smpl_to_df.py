@@ -27,6 +27,15 @@ def get_smpl(dict, frames_to_drop = (0,0)):
     return np.array(joints_2d)
 
 
+def get_cameras(dict):
+    frames = list(dict.keys())
+    pos_3d = []
+    for frame in frames:
+        pos_3d.append(dict.get(frame).get('camera'))
+    
+    return np.array(pos_3d)
+
+
 def smpl_to_df(path, frames_to_drop = (0,0)):
     #load pkl file
     results = joblib.load(path)
@@ -97,17 +106,24 @@ def smpl_to_df(path, frames_to_drop = (0,0)):
 
     smpl_joint_frames_df.columns = column_names
     
-    return smpl_joint_frames_df
+    
+    #camera
+    # cameras = np.array([get_cameras(results)[i] for i in range(len(get_cameras(results)))])
+    
+    camera_frames = get_cameras(results)
+    x_coords = camera_frames[:,:, 0]
+    
+    return smpl_joint_frames_df, x_coords
     
 
 
 if __name__ == '__main__':
-    results = joblib.load('../data/demo_walk_8.pkl')
+    results = joblib.load('../data/demo_walk_22.pkl')
     
     results = get_smpl(results, (10,10))
-    print(results.shape)
+    # print(results.shape)
     
-    df = smpl_to_df('../data/demo_walk_8.pkl', (10,10))
+    df, x = smpl_to_df('../data/demo_walk_22.pkl', (10,10))
     
     # print(len(get_smpl(results)[0]['body_pose']))
     # df = smpl_to_df('../data/demo_gymnasts.pkl')

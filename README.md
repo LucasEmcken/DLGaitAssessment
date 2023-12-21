@@ -3,6 +3,8 @@
 Deep learning for assessment of gait parameters such as assymmetry, double support time and stride length.
 You are free to use this code by forking this repository.
 
+Project by: Lucas Mørch Emcken (@TheLucanus), Mette Breuning Nielsen (@MetteBreuning) and Moamal Fadhil Abdul-Mahdi (@moamal01)
+
 ## How it works
 
 By using [4D humans](https://shubham-goel.github.io/4dhumans/) you can extract a SMPL model over time. We use this model to estimate contact points between the feet and the ground with a 93% accuracy, and by combining it with the translation of the model in SMPL space, we can estimate double support time, stride length and asymmetry. The model compared to a baseline, corresponding to the averages of the train set results in the following table.

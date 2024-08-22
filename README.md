@@ -3,7 +3,7 @@
 Deep learning for assessment of gait parameters such as assymmetry, double support time and stride length.
 You are free to use this code by forking this repository.
 
-Project by: Lucas Mørch Emcken (@TheLucanus), Mette Breuning Nielsen (@MetteBreuning) and Moamal Fadhil Abdul-Mahdi (@moamal01)
+Project by: Lucas Mørch Emcken (@LucasEmcken), Mette Breuning Nielsen (@MetteBreuning) and Moamal Fadhil Abdul-Mahdi (@moamal01)
 
 ## How it works
 
